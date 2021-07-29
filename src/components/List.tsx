@@ -1,13 +1,5 @@
 import React from 'react'
-
-interface IProps {
-  people: {
-    name: string,
-    age: number,
-    url: string,
-    note?: string
-  }[]
-}
+import { IState as IProps } from '../App'
 
 
 const List: React.FC<IProps> = ({people}: IProps) => {
@@ -17,7 +9,7 @@ const List: React.FC<IProps> = ({people}: IProps) => {
       return (
         <li className="List">
           <div className="List-header">
-            <img src={person.url} alt={person.name} />
+            <img className="List-img" src={person.url} alt={person.name} />
             <h2>{person.name}</h2>
           </div>
           <p>{person.age} years old</p>
